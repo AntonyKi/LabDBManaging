@@ -1,8 +1,8 @@
 package managers;
 
-import entities.Column;
-import entities.Database;
+import entities.*;
 import util.DBUtil;
+import util.Validator;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,7 +22,22 @@ public class DatabaseManager {
         return DBUtil.read(path + name + EXT);
     }
 
-    public Database addRow(String dbname, List<String> rowContent, ArrayList<Column> cols){
-        return
+    public void addRow(Table table, List<String> rowContent, ArrayList<Column> cols){
+        table.rows.add(Validator.validateRow(cols, rowContent));
+    }
+
+    public Table createTable(List<String> colNames, List<Type> types){
+        ArrayList<Column> cols = new ArrayList<>();
+        ArrayList<Row> rows = new ArrayList<>();
+        for(int i = 0; i<colNames.size(); i++){
+            Column col = new Column();
+            col.setName(colNames.get(i));
+            col.setType(types.get(i));
+            cols.add(col);
+        }
+        Table table = new Table();
+        table.rows = rows;
+        table.cols = cols;
+        return table;
     }
 }
