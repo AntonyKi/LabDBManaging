@@ -23,6 +23,6 @@ public class DatabaseManager {
     }
 
     public Database addRow(String dbname, List<String> rowContent, ArrayList<Column> cols){
-
+        return
     }
 }

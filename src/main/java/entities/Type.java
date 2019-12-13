@@ -2,7 +2,9 @@ package entities;
 
 public enum Type {
     INT,
-    FLOAT,
+    REAL,
+    CHAR,
     STRING,
-    DATE
+    TIME,
+    TIMELNVL
 }

@@ -6,6 +6,7 @@ public class Table {
     public String name;
     public ArrayList<Row> rows;
     public ArrayList<Column> cols;
+
     public String getName() {
         return name;
     }
@@ -20,5 +21,13 @@ public class Table {
 
     public void setCols(ArrayList<Column> cols) {
         this.cols = cols;
+    }
+
+    public ArrayList<Row> getRows() {
+        return rows;
+    }
+
+    public void setRows(ArrayList<Row> rows) {
+        this.rows = rows;
     }
 }
